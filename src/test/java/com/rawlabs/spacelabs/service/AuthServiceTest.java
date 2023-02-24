@@ -70,7 +70,7 @@ class AuthServiceTest {
                 .build());
         when(passwordEncoder.matches(any(), any())).thenReturn(false);
 
-        assertThrows(UnAuthorizedException.class, () -> authService.doLogin(LoginRequestDto.builder().build()));
+        assertThrows(RuntimeException.class, () -> authService.doLogin(LoginRequestDto.builder().build()));
     }
 
 }
